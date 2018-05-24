@@ -303,10 +303,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\GameSystem.cs" />
     <Compile Include="Assets\HyperLuminal\SlidingTilePuzzle\Scripts\ST_PuzzleDisplay.cs" />
     <Compile Include="Assets\HyperLuminal\SlidingTilePuzzle\Scripts\ST_PuzzleTile.cs" />
-    <Compile Include="Assets\QuadController.cs" />
+    <Compile Include="Assets\Scripts\GameCompleteManager.cs" />
+    <Compile Include="Assets\Scripts\GameSystem.cs" />
+    <Compile Include="Assets\Scripts\QuadController.cs" />
+    <Compile Include="Assets\Scripts\Timer.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Standard Assets\CrossPlatformInput\CrossPlatformInputGuidelines.txt" />

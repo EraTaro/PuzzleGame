@@ -37,8 +37,10 @@ public class ST_PuzzleDisplay : MonoBehaviour
 	// has the puzzle been completed?
 	public bool Complete = false;
 
-	// Use this for initialization
-	void Start () 
+    public GameObject gameClearCanvas;
+
+    // Use this for initialization
+    void Start () 
 	{
 		// create the games puzzle tiles from the provided image.
 		CreatePuzzleTiles();
@@ -233,9 +235,12 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		if(Complete)
 		{
 			Debug.Log("Puzzle Complete!");
-		}
+            gameClearCanvas.SetActive(true);
+            this.gameObject.SetActive(false);
+            GameObject.Find("CountUpText").GetComponent<Timer>().CountStop();
+        }
 
-		yield return null;
+        yield return null;
 	}
 
 	private Vector2 ConvertIndexToGrid(int index)
