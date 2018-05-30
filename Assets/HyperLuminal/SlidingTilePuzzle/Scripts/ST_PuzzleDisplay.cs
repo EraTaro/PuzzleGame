@@ -236,7 +236,8 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		{
 			Debug.Log("Puzzle Complete!");
             gameClearCanvas.SetActive(true);
-            this.gameObject.SetActive(false);
+            //this.gameObject.SetActive(false);
+            CreatePuzzleTiles();    
             GameObject.Find("CountUpText").GetComponent<Timer>().CountStop();
         }
 
