@@ -47,7 +47,6 @@ public class ST_PuzzleDisplay : MonoBehaviour
 
 		// mix up the puzzle.
 		StartCoroutine(JugglePuzzle());
-
 	}
 	
 	// Update is called once per frame
@@ -210,6 +209,7 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		yield return null;
 	}
 
+    //シャッフル後にTimerを起動
 	public IEnumerator CheckForComplete()
 	{
 		while(Complete == false)
@@ -224,8 +224,9 @@ public class ST_PuzzleDisplay : MonoBehaviour
 					if(TileDisplayArray[i,j].GetComponent<ST_PuzzleTile>().CorrectLocation == false)  
 					{
 						Complete = false;
-					}
-				}
+                        GameObject.Find("CountUpText").GetComponent<Timer>().CountStart();
+                    }
+                }
 			}
 
 			yield return null;

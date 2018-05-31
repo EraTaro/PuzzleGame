@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Timer : MonoBehaviour {
 
-    private bool isCount = false;
+    private bool isStart = false;
+    private bool isStop = false;
     private float countTime = 0f;
 
 	// Use this for initialization
@@ -16,13 +17,13 @@ public class Timer : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetMouseButtonDown(0))
-        {         
+//        if (Input.GetMouseButtonDown(0))
+//        {
             //タップされた時の処理
-            isCount = true;
-        }
+//            CountStart();
+//        }
 
-        if (isCount)
+        if (isStart && !isStop)
         {
             countTime += Time.deltaTime;
             GetComponent<Text>().text = countTime.ToString("F2");
@@ -30,11 +31,10 @@ public class Timer : MonoBehaviour {
 	}
 
     public void CountStart() {
-
+        isStart = true;
     }
 
     public void CountStop() {
-
-        isCount = false;
+        isStop = true;
     }
 }
