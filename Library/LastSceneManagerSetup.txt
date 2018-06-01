@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/5by5Puzzle.unity
+- path: Assets/Scenes/RankingScene.unity
   isLoaded: 1
   isActive: 1

@@ -18,6 +18,11 @@ public class GameSystem : MonoBehaviour {
         SceneManager.LoadScene("5by5Puzzle");
     }
 
+    public void RankingStart()
+    {
+        SceneManager.LoadScene("RankingScene");
+    }
+
     public void GameEnd() {
         SceneManager.LoadScene("StartScene");
     }
