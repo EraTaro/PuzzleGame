@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using NCMB;
 
 public class Timer : MonoBehaviour {
 
     private bool isStart = false;
     private bool isStop = false;
-    private float countTime = 0f;
+    private double countTime = 0f;
 
 	// Use this for initialization
 	void Start () {
@@ -36,5 +37,11 @@ public class Timer : MonoBehaviour {
 
     public void CountStop() {
         isStop = true;
+
+        // ハイスコアを取得する。保存されてなければ0点。
+        NCMBObject obj = new NCMBObject("HighScore");
+        obj["Name"] = "EraTaro";
+        obj["Score"] = countTime;
+        obj.SaveAsync();
     }
 }
