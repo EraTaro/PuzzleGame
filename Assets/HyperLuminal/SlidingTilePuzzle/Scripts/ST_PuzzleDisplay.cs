@@ -327,4 +327,6 @@ public class ST_PuzzleDisplay : MonoBehaviour
 		TileDisplayArray[2,3].GetComponent<Renderer>().material = thisTileMaterial2;
 		*/
 	}
+
+
 }
