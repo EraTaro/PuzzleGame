@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using NCMB;
 
 public class Timer : MonoBehaviour {
 
@@ -39,9 +38,7 @@ public class Timer : MonoBehaviour {
         isStop = true;
 
         // ハイスコアを取得する。保存されてなければ0点。
-        NCMBObject obj = new NCMBObject("HighScore");
-        obj["Name"] = "EraTaro";
-        obj["Score"] = countTime;
-        obj.SaveAsync();
+        // Type == Number の場合
+        naichilab.RankingLoader.Instance.SendScoreAndShowRanking(countTime);
     }
 }
